@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Integer in Javascript</title>
+</head>
+<body>
+
+    <h2>Reverse Integer in JS</h2>
+
+    <script>
+        function reverse(x) {
+
+            const max = Math.pow(2, 31) - 1 ;
+            const min = 0 - Math.pow(2, 31); 
+
+            if(x == 0)
+                 return 0; 
+                
+            if(x == 0)
+                 return 0; 
+            
+            var negative = false; 
+            if( x < 0)
+            {
+                negative = true; 
+                x = 0 - x; 
+            }
+
+            var remind;
+            var sum = 0;
+            while(x != 0) {
+                
+                remind = x % 10;
+                x = Math.floor(x / 10);
+                sum = sum * 10 + remind;
+
+            }
+
+            // Check Reversing value maximum
+            if(sum > max)
+                    return 0; 
+            
+    
+            if(negative)
+            {
+                sum = 0 - sum;
+            }
+
+            return sum;
+                 
+        }
+
+        console.log(reverse(1534236469));
+
+    </script>
+
+</body>
+</html>
